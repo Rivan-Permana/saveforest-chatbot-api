@@ -38,7 +38,8 @@ app.post("/ask", async (req, res) => {
   }
 });
 
-const PORT = 3000;
+// ✅ Gunakan port dari Cloud Run
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`🚀 Chatbot Deforestasi aktif di http://localhost:${PORT}`);
+  console.log(`🚀 Chatbot Deforestasi aktif di port ${PORT}`);
 });
